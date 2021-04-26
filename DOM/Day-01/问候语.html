@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问候语</title>
+    <style>
+        .box {
+            width: 1400px;
+            height: 600px;
+            background-color: skyblue;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+    </style>
+    <script src="js/time.js"></script>
+</head>
+<body>
+<div class="box">
+<h1>问候语</h1>
+<div>
+  <img src="images/z.gif" alt="" title="早上好">
+</div>
+</div>
+
+<script>
+    let say = document.querySelector('h1');
+    let myImg = document.querySelector('img');
+
+    let time = getHourTime();
+    if (time >= 5 && time < 10) {
+        // 早上
+        say.innerHTML = "早上好";
+        myImg.src = "images/z.gif";
+    } else if (time >= 10 && time < 14) {
+        // 中午
+        say.innerHTML = "中午好";
+        myImg.src = "images/z.gif";
+    } else if (time >= 14 && time < 19) {
+        // 下午
+        say.innerHTML = "下午好";
+        myImg.src = "images/x.gif";
+    } else {
+        // 晚上
+        say.innerHTML = "晚上好";
+        myImg.src = "images/w.gif";
+    }
+</script>
+
+</body>
+</html>

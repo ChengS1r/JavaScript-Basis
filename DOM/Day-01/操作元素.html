@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作元素</title>
+</head>
+<body>
+<button>显示当前系统时间</button>
+<div>当前时间：<span>time</span></div>
+<script>
+    // 获取元素
+    let btn = document.querySelector('button');
+    let time =  document.body.querySelector('span');
+    // 页面刷新就执行
+    time.innerText = new Date().toLocaleTimeString();
+    // 绑定事件
+    btn.onclick = function () {
+        time.innerHTML = new Date().toLocaleTimeString();
+    }
+</script>
+</body>
+</html>

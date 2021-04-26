@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改元素属性</title>
+<!--    <style>-->
+<!--        img {-->
+<!--            vertical-align: bottom;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+<button>张学友</button>
+<button>刘德华</button>
+<div><img src="images/zxy.jpg" alt="zhy"></div>
+<script>
+    let btns = document.getElementsByTagName('button');
+    let myImg = document.querySelector('img');
+    console.log(btns);
+    btns[0].onclick = function () {
+        myImg.src = "images/zxy.jpg";
+    }
+    btns[1].onclick = function () {
+        myImg.src = "images/ldh.jpg";
+    }
+</script>
+</body>
+</html>
