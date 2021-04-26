@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单属性设置</title>
+</head>
+<body>
+<button>按钮</button>
+<input type="text" placeholder="请输入">
+
+<script>
+  let btn = document.querySelector('button');
+  let input = document.querySelector('input');
+
+  btn.onclick = function () {
+    input.placeholder = "被点击了";
+    this.disabled = true;
+  }
+</script>
+</body>
+</html>
