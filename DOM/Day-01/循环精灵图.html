@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环精灵图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: "";
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .box {
+            width: 250px;
+            margin: 100px auto;
+        }
+
+        .box li {
+            float: left;
+            width: 24px;
+            height: 24px;
+            background-color: greenyellow;
+            margin: 15px;
+            background: url("images/sprite.png") no-repeat;
+        }
+
+        li {
+            list-style: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="clearfix">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script>
+    let lst = document.getElementsByTagName('li');
+    let len = -44;
+
+    for (let i = 0; i < lst.length; i++) {
+        lst[i].style.backgroundPosition = "0px " + len * i + "px";
+    }
+</script>
+</body>
+</html>
