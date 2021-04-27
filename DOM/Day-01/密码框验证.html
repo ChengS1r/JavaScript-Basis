@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>密码框验证</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pwd-box input {
+            vertical-align: middle;
+            outline: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #c5c5c5;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="pwd-box">
+    <span class="title">设置密码:</span><input type="password"><img src="images/mess.png" alt=""><span class="hint">6到16位字符（字母、数字、符号），区分大小写</span>
+
+    <script>
+        let pwd = document.querySelector('input');
+        let img = document.querySelector('img');
+        let hint = document.querySelector('.hint');
+        pwd.onfocus = function () {
+            img.src = "images/mess.png";
+            hint.innerHTML = "6到16位字符（字母、数字、符号），区分大小写";
+        }
+
+        pwd.onblur = function () {
+            if (this.value.length < 6) {
+                // 错误
+                img.src = "images/wrong.png";
+                hint.innerHTML = "密码长度太短";
+            } else if (this.value.length > 16) {
+                img.src = "images/wrong.png";
+                hint.innerHTML = "密码长度太长";
+            } else {
+                img.src = "images/right.png";
+                hint.innerHTML = "密码正确";
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
