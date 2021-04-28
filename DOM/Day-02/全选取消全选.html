@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选取消全选</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        table {
+            margin: 100px auto;
+            text-align: center;
+            border: 1px solid gray;
+            border-collapse: collapse;
+            font-size: 32px;
+        }
+
+        thead tr {
+            background-color: skyblue;
+        }
+
+        th,
+        td {
+            padding: 10px 20px;
+        }
+
+        input {
+            width: 25px;
+            height: 25px;
+        }
+
+        .gray {
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th><input type="checkbox"></th>
+        <th>商品</th>
+        <th>价钱</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>Iphone8</td>
+        <td>8000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>IPad Pro</td>
+        <td>5000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>ipad Air</td>
+        <td>2000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>Apple Watch</td>
+        <td>2000</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+
+    let tbody_trs = document.querySelectorAll('tbody tr');
+
+    for (let i = 0; i < tbody_trs.length; i++) {
+        tbody_trs[i].onmouseover = function () {
+            this.className = "gray";
+        }
+
+        tbody_trs[i].onmouseout = function () {
+            this.className = "";
+        }
+    }
+
+    let allSelect = document.querySelector('thead input');
+
+    let singleSelects = document.querySelectorAll('tbody input');
+
+    allSelect.onclick = function () {
+        for (let i = 0; i < singleSelects.length; i++) {
+            singleSelects[i].checked = this.checked;
+        }
+    }
+
+    for (let i = 0; i < singleSelects.length; i++) {
+        singleSelects[i].onclick = function () {
+            let flag = true;
+            for (let j = 0; j < singleSelects.length; j++) {
+                if (!singleSelects[j].checked) {
+                    flag = false;
+                    break;
+                }
+            }
+            allSelect.checked = flag;
+        }
+    }
+</script>
+</body>
+</html>
