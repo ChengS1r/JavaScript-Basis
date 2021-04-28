@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格隔行变色</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        table {
+            margin: 100px auto;
+            text-align: center;
+            font-size: 24px;
+            border-collapse: collapse;
+        }
+
+        tr {
+            cursor: default;
+        }
+
+        thead tr {
+            background-color: skyblue;
+        }
+
+        th,
+        td {
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>代码</th>
+        <th>名称</th>
+        <th>最新公布净值</th>
+        <th>累计净值</th>
+        <th>前单位净值</th>
+        <th>净值增长率</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>003562</td>
+        <td>华夏基金代码XXXXXXX</td>
+        <td>1.301203</td>
+        <td>2.31231</td>
+        <td>1.33312</td>
+        <td>+0.3213%</td>
+    </tr>
+    <tr>
+        <td>003562</td>
+        <td>华夏基金代码XXXXXXX</td>
+        <td>1.301203</td>
+        <td>2.31231</td>
+        <td>1.33312</td>
+        <td>+0.3213%</td>
+    </tr>
+    <tr>
+        <td>003562</td>
+        <td>华夏基金代码XXXXXXX</td>
+        <td>1.301203</td>
+        <td>2.31231</td>
+        <td>1.33312</td>
+        <td>+0.3213%</td>
+    </tr>
+    <tr>
+        <td>003562</td>
+        <td>华夏基金代码XXXXXXX</td>
+        <td>1.301203</td>
+        <td>2.31231</td>
+        <td>1.33312</td>
+        <td>+0.3213%</td>
+    </tr>
+    <tr>
+        <td>003562</td>
+        <td>华夏基金代码XXXXXXX</td>
+        <td>1.301203</td>
+        <td>2.31231</td>
+        <td>1.33312</td>
+        <td>+0.3213%</td>
+    </tr>
+    <tr>
+        <td>003562</td>
+        <td>华夏基金代码XXXXXXX</td>
+        <td>1.301203</td>
+        <td>2.31231</td>
+        <td>1.33312</td>
+        <td>+0.3213%</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    let trs = document.querySelectorAll("tbody tr");
+    console.log(trs);
+    for (let i = 0; i < trs.length; i++) {
+        trs[i].onmouseover = function () {
+            this.style.backgroundColor = "pink";
+        }
+        trs[i].onmouseout = function () {
+            this.style.backgroundColor = "transparent";
+        }
+    }
+</script>
+</body>
+</html>
