@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>世纪佳缘登录窗口</title>
+    <style>
+        .login {
+            width: 442px;
+            height: 30px;
+            /*background-color: skyblue;*/
+            margin: 32px auto;
+        }
+
+        input {
+            width: 150px;
+            height: 24px;
+            outline: none;
+        }
+
+        .focus {
+            border-color: pink;
+        }
+
+        .blur {
+            border-color: #c5c5c5;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="login">
+    <form action="">
+        <input type="text" placeholder="邮箱/ID/手机号" id="user">
+        <input type="password" placeholder="密码" id="pwd">
+        <button>登录</button>
+    </form>
+</div>
+
+<script>
+    let user = document.getElementById('user');
+    let pwd = document.getElementById('pwd');
+
+    user.onfocus = function () {
+        this.placeholder = "";
+        this.className = "focus";
+    }
+    user.onblur = function () {
+        if (this.value == "") {
+            this.placeholder = "邮箱/ID/手机号";
+        }
+        this.style.borderColor = '#c5c5c5';
+    }
+</script>
+</body>
+</html>
