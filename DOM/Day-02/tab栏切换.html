@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab栏切换</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .tab {
+            width: 1200px;
+            margin: 100px auto;
+        }
+        .tab .nav li {
+            float: left;
+            padding: 0 30px;
+            line-height: 50px;
+            font-size: 24px;
+        }
+
+        .nav {
+            height: 50px;
+            background-color: #c5c5c5;
+        }
+
+        .content div{
+            display: none;
+        }
+
+        .content img {
+            width: 100%;
+        }
+
+        .nav-bgc {
+            background-color: red;
+            collapse: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="tab">
+    <div class="nav">
+        <ul>
+            <li><a href="#">图片1</a></li>
+            <li><a href="#">图片2</a></li>
+            <li><a href="#">图片3</a></li>
+            <li><a href="#">图片4</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="img1" index="0"><img src="images/1.jpg" alt=""></div>
+        <div class="img2" index="1"><img src="images/2.jpg" alt=""></div>
+        <div class="img3" index="2"><img src="images/3.jpg" alt=""></div>
+        <div class="img4" index="3"><img src="images/4.jpg" alt=""></div>
+    </div>
+</div>
+
+<script>
+    let lst = document.querySelectorAll('.nav li');
+    // lst[0].setAttribute('class', 'nav-bgc');
+
+    let imgs = document.querySelectorAll('.content div');
+
+    let now = lst[0];
+
+    for (let i = 0; i < lst.length; i++) {
+        lst[i].onclick = function () {
+            console.log(i);
+            now.removeAttribute('class');
+            this.setAttribute('class', 'nav-bgc');
+            now = this;
+            for (let j = 0; j < imgs.length; j++) {
+                if (i == imgs[j].getAttribute('index')) {
+                    imgs[j].style.display = 'block';
+                } else {
+                    imgs[j].style.display = 'none';
+                }
+            }
+        }
+    }
+    now.onclick();
+</script>
+</body>
+</html>
