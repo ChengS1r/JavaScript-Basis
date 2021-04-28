@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度换肤</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+
+        ul {
+            width: 640px;
+            margin: 100px auto;
+        }
+
+        li {
+            float: left;
+            width: 160px;
+            height: 100px;
+        }
+
+        li img {
+            width: 100%;
+        }
+
+        body {
+            background-image: url("images/1.jpg");
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<ul class="baidu clearfix">
+    <li><img src="images/1.jpg" alt=""></li>
+    <li><img src="images/2.jpg" alt=""></li>
+    <li><img src="images/3.jpg" alt=""></li>
+    <li><img src="images/4.jpg" alt=""></li>
+</ul>
+<script>
+    let images = document.querySelectorAll('img');
+
+    for (let i = 0; i < images.length; i++) {
+        images[i].onclick = function () {
+            document.body.style.backgroundImage = "url(" + this.src + ")";
+            console.log(this.src);
+        }
+    }
+</script>
+</body>
+</html>
