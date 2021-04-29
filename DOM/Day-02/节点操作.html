@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点操作</title>
+</head>
+<body>
+<div>
+    <ul class="box1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ol class="box2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+</div>
+
+<script>
+    let ul = document.querySelector('ul');
+    let ol = document.querySelector('ol');
+
+    console.log(ul.parentElement);
+    console.log(ul.parentNode);
+
+    ul.getChildren = function () {
+        var ret = new Array();
+        let nodes = this.childNodes;
+        for (let i = 0; i < nodes.length; i++) {
+            if (nodes[i].nodeType == 1) {
+                ret.push(nodes[i]);
+            }
+        }
+        return ret;
+    }
+
+    console.log(ul.getChildren());
+
+    console.log(ul.childNodes);
+
+    console.log(ul.children);
+
+</script>
+</body>
+</html>
