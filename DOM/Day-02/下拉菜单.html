@@ -92,15 +92,15 @@
 </nav>
 
 <script>
-    let links = document.querySelectorAll('a');
+    let links = document.querySelectorAll('.shortcut li');
 
     for (let i = 0; i < links.length; i++) {
         links[i].onmouseover = function () {
-            this.parentElement.lastElementChild.style.display = 'block';
+            this.lastElementChild.style.display = 'block';
         }
 
         links[i].onmouseout = function () {
-            this.parentElement.lastElementChild.style.display = 'none';
+            this.lastElementChild.style.display = 'none';
         }
     }
 
