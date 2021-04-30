@@ -34,3 +34,7 @@ a {
 .float-right {
     float: right;
 }
+
+a:hover {
+    color: #fa2424;
+}
