@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开关灯</title>
+</head>
+<body>
+<h1>开关灯</h1>
+<!--关灯照片：https://www.w3schools.com/js/pic_bulboff.gif-->
+<!--开灯照片：https://www.w3schools.com/js/pic_bulbon.gif-->
+<img src="https://www.w3schools.com/js/pic_bulboff.gif" alt="关灯" title="关灯">
+<div><button>开关</button></div>
+
+<script>
+    var flag = false;
+    document.querySelector('button').onclick = function () {
+        var light = document.querySelector('img');
+        if (flag) {
+            light.setAttribute('src', "https://www.w3schools.com/js/pic_bulboff.gif");
+        } else {
+            light.setAttribute('src', "https://www.w3schools.com/js/pic_bulbon.gif");
+        }
+        flag = !flag;
+        console.log(flag);
+    }
+</script>
+</body>
+</html>
