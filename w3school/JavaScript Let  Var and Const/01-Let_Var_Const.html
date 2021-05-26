@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let Var and Const</title>
+</head>
+<body>
+<h1>通过chrome浏览器的调试功能去看let和var的区别</h1>
+<script>
+    // js在ES6之后有Global（全局 window窗口）、Script（脚本）、
+    // Block（块级）、Local（函数）四个作用域（个人认知）
+    var a = 1;
+    let b = 1;
+    {
+        var c = 1;
+        let d = 1;
+    }
+
+    function f1 () {
+        var e = 1;
+        let f = 1;
+    }
+    f1();
+
+    console.log(window.a);
+    console.log(window.b);
+    debugger
+</script>
+</body>
+</html>
