@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>output</title>
+</head>
+<body>
+<script>
+    document.write("<p>页面加载完成后使用document.write会替换掉整个页面，并删除页面之前渲染的内容，需要着重注意</p>")
+</script>
+<h1>the intro of js output</h1>
+<script>
+    document.write("<p>document.write方法仅仅用于测试的目的</p>")
+</script>
+
+<button onclick="document.write('页面加载完成后使用document.write会删除整个页面')">页面加载完成后使用document.write</button>
+<script>
+    window.alert("window.alert");
+    console.log("console.log");
+    document.getElementsByTagName('h1')[0].innerHTML += ": innerHTML";
+</script>
+</body>
+</html>
