@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Data Types</title>
+</head>
+<body>
+<h4 id="show">
+    内容显示区域...
+</h4>
+<script>
+    /*
+    var arg1 = undefined;
+    var arg2 = null;
+    var arg3;
+    var arg4 = 1;
+    var arg5 = "one";
+    var arg6 = function () {
+    };
+    */
+
+    var array = [undefined, null, , 1, "one", function (){}, [123,456], {name: "名称"}, true];
+
+    var ele = document.getElementById('show');
+
+    for (let i = 0; i < array.length; i++) {
+        ele.innerHTML += '<br/>' + array[i] + " : " + typeof array[i];
+    }
+
+</script>
+</body>
+</html>
